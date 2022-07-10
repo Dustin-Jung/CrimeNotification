@@ -27,12 +27,12 @@ class SplashViewModel @Inject constructor(
                     if (result.data.isEmpty()) {
                         loadCriminals()
                     } else {
-                        viewStateChanged(SplashViewState.RouteHome)
+                       SplashViewState.RouteHome
                     }
                 }
 
                 is Result.Error -> {
-                    viewStateChanged(SplashViewState.Error("저장된 범죄자 데이터를 가지고 올 수 없습니다. 다시 시도해 주세요."))
+                    SplashViewState.Error("저장된 범죄자 데이터를 가지고 올 수 없습니다. 다시 시도해 주세요.")
                 }
 
 
@@ -44,9 +44,10 @@ class SplashViewModel @Inject constructor(
     private fun loadCriminals() {
 
         ioScope {
-            when(val result = criminalRepository.getRemoteCriminals()){
+            when (val result = criminalRepository.getRemoteCriminals()) {
 
                 is Result.Success -> {
+
 
                 }
 
@@ -57,5 +58,7 @@ class SplashViewModel @Inject constructor(
         }
 
     }
+
+
 
 }

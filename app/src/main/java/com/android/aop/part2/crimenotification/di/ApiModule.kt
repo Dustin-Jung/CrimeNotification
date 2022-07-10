@@ -1,5 +1,6 @@
 package com.android.aop.part2.crimenotification.di
 
+import com.android.aop.part2.crimenotification.api.KakaoApi
 import com.android.aop.part2.crimenotification.api.SheetApi
 import dagger.Module
 import dagger.Provides
@@ -25,5 +26,18 @@ object ApiModule {
 
     }
 
+    @Singleton
+    @Provides
+    fun provideKakaoApi(): KakaoApi {
+        return Retrofit.Builder()
+            .baseUrl(KAKAO_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(KakaoApi::class.java)
+
+
+    }
+
     private const val SHEET_URL = "https://sheetdb.io/"
+    private const val KAKAO_URL = "https://dapi.kakao.com/"
 }
