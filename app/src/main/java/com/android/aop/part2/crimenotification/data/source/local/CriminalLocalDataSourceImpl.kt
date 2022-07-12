@@ -14,4 +14,20 @@ class CriminalLocalDataSourceImpl @Inject constructor(private val criminalDao: C
             Result.Error(e)
         }
     }
+
+    override suspend fun registerCriminalEntityList(toZipList: List<CriminalEntity>): Boolean {
+        return try {
+            registerAll(toZipList)
+        } catch (e: Exception) {
+            false
+        }
+    }
+
+    private fun registerAll(list: List<CriminalEntity>): Boolean {
+        var isAllSave = true
+        list.forEach {
+            isAllSave = isAllSave.and(criminalDao.registerCriminalEntity(it) > 0)
+        }
+        return isAllSave
+    }
 }

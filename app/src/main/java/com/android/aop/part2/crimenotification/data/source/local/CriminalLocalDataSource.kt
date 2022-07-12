@@ -7,4 +7,6 @@ import com.android.aop.part2.crimenotification.util.Result
 interface CriminalLocalDataSource {
 
     suspend fun getLocalCriminals(): Result<List<CriminalEntity>>
+
+    suspend fun registerCriminalEntityList(toZipList: List<CriminalEntity>): Boolean
 }

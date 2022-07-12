@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/App/Ws/AndroidStudio/CrimeNotification/app/src/main/res/drawable/bg_action_lorange.xml" value="0.1495" />
+        <entry key="..\:/App/Ws/AndroidStudio/CrimeNotification/app/src/main/res/drawable/bg_box_stroke.xml" value="0.1495" />
+        <entry key="..\:/App/Ws/AndroidStudio/CrimeNotification/app/src/main/res/layout/activity_login.xml" value="0.12335359675785208" />
         <entry key="..\:/App/Ws/AndroidStudio/CrimeNotification/app/src/main/res/layout/activity_splash.xml" value="0.12335359675785208" />
       </map>
     </option>

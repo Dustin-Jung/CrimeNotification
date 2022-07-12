@@ -19,6 +19,7 @@ class CriminalRepositoryImpl @Inject constructor(
     override suspend fun getLocalCriminals(): Result<List<CriminalEntity>> =
         criminalLocalDataSource.getLocalCriminals()
 
-
+    override suspend fun registerCriminalEntityList(toZipList: List<CriminalEntity>): Boolean =
+        criminalLocalDataSource.registerCriminalEntityList(toZipList)
 
 }
