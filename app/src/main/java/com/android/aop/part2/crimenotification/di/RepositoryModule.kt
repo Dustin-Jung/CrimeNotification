@@ -1,15 +1,9 @@
 package com.android.aop.part2.crimenotification.di
 
-import com.android.aop.part2.crimenotification.data.repo.CriminalRepository
-import com.android.aop.part2.crimenotification.data.repo.CriminalRepositoryImpl
-import com.android.aop.part2.crimenotification.data.repo.KakaoRepository
-import com.android.aop.part2.crimenotification.data.repo.KakaoRepositoryImpl
+import com.android.aop.part2.crimenotification.data.repo.*
 import com.android.aop.part2.crimenotification.data.source.local.CriminalLocalDataSource
 import com.android.aop.part2.crimenotification.data.source.local.CriminalLocalDataSourceImpl
-import com.android.aop.part2.crimenotification.data.source.remote.CriminalRemoteDataSource
-import com.android.aop.part2.crimenotification.data.source.remote.CriminalRemoteDataSourceImpl
-import com.android.aop.part2.crimenotification.data.source.remote.KakaoRemoteDataSource
-import com.android.aop.part2.crimenotification.data.source.remote.KakaoRemoteDataSourceImpl
+import com.android.aop.part2.crimenotification.data.source.remote.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -39,5 +33,14 @@ abstract class RepositoryModule {
     @Singleton
     @Binds
     abstract fun bindKakaoRemoteDataSource(kakaoRemoteDataSourceImpl: KakaoRemoteDataSourceImpl): KakaoRemoteDataSource
+
+
+    @Singleton
+    @Binds
+    abstract fun bindFirebaseRepository(firebaseRepositoryImpl: FirebaseRepositoryImpl): FirebaseRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindFirebaseRemoteDataSource(firebaseRemoteDataSourceImpl: FirebaseRemoteDataSourceImpl): FirebaseRemoteDataSource
 
 }

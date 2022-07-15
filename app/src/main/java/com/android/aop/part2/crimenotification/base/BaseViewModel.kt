@@ -1,7 +1,7 @@
 package com.android.aop.part2.crimenotification.base
 
 import android.app.Application
-import androidx.constraintlayout.motion.utils.ViewState
+import com.android.aop.part2.crimenotification.base.ViewState
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

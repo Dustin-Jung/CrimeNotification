@@ -33,12 +33,12 @@ class SplashViewModel @Inject constructor(
                     if (result.data.isEmpty()) {
                         loadCriminals()
                     } else {
-                        SplashViewState.RouteHome
+                        viewStateChanged(SplashViewState.RouteHome)
                     }
                 }
 
                 is Result.Error -> {
-                    SplashViewState.Error("저장된 범죄자 데이터를 가지고 올 수 없습니다. 다시 시도해 주세요.")
+                    viewStateChanged(SplashViewState.Error("저장된 범죄자 데이터를 가지고 올 수 없습니다. 다시 시도해 주세요."))
                 }
 
 
@@ -67,9 +67,9 @@ class SplashViewModel @Inject constructor(
 
                         ioScope {
                             if (criminalRepository.registerCriminalEntityList(toZipList)) {
-                                SplashViewState.RouteHome
+                                viewStateChanged(SplashViewState.RouteHome)
                             } else {
-                                SplashViewState.Error("저장을 실패하였습니다. 다시 시도해 주세요.")
+                                viewStateChanged(SplashViewState.Error("저장을 실패하였습니다. 다시 시도해 주세요."))
                             }
                         }
                     }
